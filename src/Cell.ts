@@ -23,9 +23,8 @@ export class Cell {
     this.isFlagged = false;
     this._isDirty = false;
     this.color = "";
-    if(!softReset) this.cellDOM.remove();
+    if (!softReset) this.cellDOM.remove();
   }
-
 
   open() {
     if (this.isFlagged) return;
@@ -43,7 +42,7 @@ export class Cell {
   toString() {
     if (!this.isOpened && !this.isFlagged) return "";
     return this.isFlagged
-      ? "🚩"
+      ? "🚩️"
       : this.mine
       ? "💣"
       : this.isEmpty
@@ -53,5 +52,8 @@ export class Cell {
 
   flag() {
     this.isFlagged = !this.isFlagged;
+  }
+  isIncorrectlyFlagged() {
+    return this.isFlagged && !this.mine;
   }
 }

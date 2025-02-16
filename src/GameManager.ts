@@ -50,7 +50,13 @@ export class GameManager {
 
     this.settings.container.addEventListener(
       this.GAME_EVENTS.ON_GAME_OVER,
-      (e) => this.onGameOver?.(e)
+      (e) => {
+        if (this._gameState === "lose") {
+          this.minesweeper.openAllMines();
+          this.renderCells();
+        }
+        this.onGameOver?.(e);
+      }
     );
   }
 
@@ -256,7 +262,6 @@ export class GameManager {
       clearInterval(this.timer);
       this._gameState = "lose";
       this.dispatchEvent("ON_GAME_OVER", { gameState: this._gameState });
-      console.log("you lose");
     } else {
       const gameState = this.minesweeper.getGameState();
       if (gameState === "win") {

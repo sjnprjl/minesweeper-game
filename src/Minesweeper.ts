@@ -205,4 +205,13 @@ export class Minesweeper {
       .reduce((ac, c) => ac + c + "\n", "");
     console.log(board);
   }
+
+  openAllMines() {
+    this.board.forEach((row) => {
+      row.forEach((cell) => {
+        if (cell.mine && !cell.isOpened) cell.open();
+        if (cell.isIncorrectlyFlagged()) cell.cellDOM.style.background = "#f00";
+      });
+    });
+  }
 }
