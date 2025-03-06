@@ -19,6 +19,11 @@ Minesweeper is a classic puzzle game where the objective is to uncover all the c
 - **Flagging system**: Users can flag potential mine locations.
 - **Custom difficulty levels**: Choose from easy, medium, and hard grids.
 
+## 🎮 Try it Out
+
+Play Minesweeper directly in your browser:
+👉 [Launch Minesweeper Game](https://sjnprjl.github.io/minesweeper-game/)
+
 ## 🖥️ How to Play
 
 1. **Start the Game**: Select a difficulty level (easy, medium, or hard).
